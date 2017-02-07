@@ -2,12 +2,12 @@ language: ruby
 rvm:
 - 2.2
 install:
-- bundle install
+- bundle install -—binstubs
 - gem install jekyll html-proofer
-bundler_args: --binstubs
+- apt-get install hunspell
 script:
 - jekyll doctor && jekyll build --verbose
-- hunspell
+- hunspell -H ./_site/*
 - htmlproofer ./_site --allow-hash-href
 
 # branch blacklist
