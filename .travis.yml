@@ -10,7 +10,7 @@ addons:
     - hunspell
 script:
 - jekyll doctor && jekyll build --verbose
-- hunspell -H ./_site/*
+- hunspell -u3 -H $(find ./_site/ -name \*.html)
 - htmlproofer ./_site --allow-hash-href
 
 # branch blacklist
