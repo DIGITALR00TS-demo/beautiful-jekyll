@@ -7,22 +7,7 @@ install:
 addons:
   apt:
     packages:
-    - autoconf
-    - automake
-    - autopoint
-    - libtool
-    - g++
-    - make
-    - ldconfig
-    - locale
-    - gettext
-    - readline
-before_script:
-- autoreconf -vfi
-- ./configure
-- make
-- make install    #if neccesary prefix with sudo
-- ldconfig
+    - hunspell
 script:
 - jekyll doctor && jekyll build --verbose
 - hunspell -v
@@ -39,3 +24,4 @@ env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 sudo: false # explicitly build on Travis’s container-based infrastructure
+dist: trusty
