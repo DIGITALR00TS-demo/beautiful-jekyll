@@ -4,7 +4,10 @@ rvm:
 install:
 - bundle install
 - gem install html-proofer
-- apt-get install hunspell
+addons:
+  apt:
+    packages:
+    - hunspell
 script:
 - jekyll doctor && jekyll build --verbose
 - hunspell -H ./_site/*
