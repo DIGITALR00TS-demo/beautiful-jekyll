@@ -7,7 +7,22 @@ install:
 addons:
   apt:
     packages:
-    - hunspell
+    - autoconf
+    - automake
+    - autopoint
+    - libtool
+    - g++
+    - make
+    - ldconfig
+    - locale
+    - gettext
+    - readline
+before_script:
+- autoreconf -vfi
+- ./configure
+- make
+- make install    #if neccesary prefix with sudo
+- ldconfig
 script:
 - jekyll doctor && jekyll build --verbose
 - hunspell -v
