@@ -2,8 +2,8 @@ language: ruby
 rvm:
 - 2.2
 install:
-- bundle install -—binstubs
-- gem install jekyll html-proofer
+- bundle install
+- gem install html-proofer
 - apt-get install hunspell
 script:
 - jekyll doctor && jekyll build --verbose
