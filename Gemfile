@@ -30,3 +30,5 @@ gem 'mercenary'
 gem 'nokogiri'
 gem 'rouge'
 gem 'terminal-table'
+
+gem 'jekyll-paginate'
